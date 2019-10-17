@@ -21,3 +21,19 @@ export const deleteByHash = (req, res) => {
         res.status(400).json({ message: error.message });
     }
 };
+
+export const enroll = (req, res) => {
+    try {
+        res.status(204).end();
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+    }
+};
+
+export const expel = (req, res) => {
+    try {
+        res.status(204).end();
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+    }
+};
