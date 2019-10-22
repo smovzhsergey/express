@@ -1,5 +1,8 @@
 import express from 'express';
 
+// utils
+import { authorization } from '../../../utils'
+
 export const router = express.Router();
 
 const post = (req, res) => {
@@ -10,6 +13,6 @@ const post = (req, res) => {
   }
 };
 
-router.post('/', post);
+router.post('/', [authorization], post);
 
 export { router as logout };
