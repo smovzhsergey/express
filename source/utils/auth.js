@@ -1,8 +1,11 @@
+import { getPassword } from './index';
+
 export const authorization = (req, res, next) => {
 	
-	const auth = req.header('Authorization');
+	const { authorization } = req.headers;
+	const password = getPassword();
 
-	if (auth === process.env.PASSWORD) {
+	if (authorization === password) {
 		return next();
 	}
 

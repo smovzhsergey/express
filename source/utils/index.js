@@ -1,5 +1,6 @@
 export { authorization } from './auth';
-export { getPort } from './env';
+export { getPassword, getPort } from './env';
+export { NotFoundError, ValidationError } from './errors';
 export { limiter } from './limiter';
 export { validator } from './validator';
-export { log } from './logger';
+export { log, notFoundLogger, writeErrorLogger, validationLogger } from './loggers';

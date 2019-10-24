@@ -4,7 +4,7 @@ const logger = createLogger({
 	level: 'debug',
 	format: format.simple(),
 	transports: [ new transports.Console({
-		level:    'debug',
+		level: 'debug',
 		colorize: true,
 	})],
 });
