@@ -1,4 +1,4 @@
-import express from 'express';
+import { Router } from 'express';
 
 // utils
 import { authorization, limiter } from '../../utils';
@@ -6,7 +6,7 @@ import { authorization, limiter } from '../../utils';
 import { get, post } from './handlers';
 import { enroll, expel, getByHash, deleteByHash, updateByHash } from './hash';
 
-export const router = express.Router();
+export const router = Router();
 
 router.get('/', [limiter(2, 1000 * 60)], get);
 router.post('/', [authorization], post);

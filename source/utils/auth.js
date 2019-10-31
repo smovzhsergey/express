@@ -3,9 +3,11 @@ import { getPassword } from './index';
 export const authorization = (req, res, next) => {
 	
 	const { authorization } = req.headers;
+	const { email } = req.session;
+	
 	const password = getPassword();
 
-	if (authorization === password) {
+	if (authorization === password && email) {
 		return next();
 	}
 

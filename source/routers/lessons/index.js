@@ -1,9 +1,10 @@
-import express from 'express';
+import { Router } from 'express';
 
 // utils
 import { authorization } from '../../utils';
 
 import { get, post } from './handlers';
+
 import { 
   getByHash,
   deleteByHash,
@@ -16,7 +17,7 @@ import {
   deleteKeynoteByHash
 } from './hash';
 
-export const router = express.Router();
+export const router = Router();
 
 router.get('/', get);
 router.post('/', [authorization], post);
